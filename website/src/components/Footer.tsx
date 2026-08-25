@@ -29,7 +29,7 @@ export default function Footer() {
         viewport={VIEWPORT_ONCE}
         transition={{ duration: 0.9, ease: EASE_OUT }}
         aria-hidden
-        className="select-none text-center font-display text-[clamp(64px,11vw,180px)] font-extrabold leading-[0.95] tracking-[-0.02em] text-ink max-sm:whitespace-normal sm:whitespace-nowrap"
+        className="select-none whitespace-nowrap text-center font-display text-[clamp(44px,11vw,180px)] font-extrabold leading-[0.95] tracking-[-0.02em] text-ink"
       >
         Lade Stack
       </motion.p>

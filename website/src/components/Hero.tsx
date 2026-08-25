@@ -52,7 +52,7 @@ export default function Hero() {
           initial={entrance}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.1, ease: EASE_OUT }}
-          className="absolute inset-x-0 -top-[7vh] h-[114vh]"
+          className="absolute inset-x-0 -top-[7%] h-[114%]"
         >
           {/* TODO: Replace /images/hero-portrait.jpg with your real professional
               photo (16:9 landscape, black studio background — see prompt 14 for
@@ -73,7 +73,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 1.0, ease: EASE_OUT }}
           aria-label="Girish Lade — Building AI-Powered Tools That Empower Developers"
-          className="pointer-events-none absolute inset-x-0 top-[37.5vh] z-20 select-none text-center"
+          className="pointer-events-none absolute inset-x-0 top-[37.5%] z-20 select-none text-center"
         >
           <span
             aria-hidden
@@ -83,40 +83,40 @@ export default function Hero() {
           </span>
         </motion.h1>
 
-        {/* Left column: tagline */}
-        <motion.div
-          initial={reduced ? false : { opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.7, ease: EASE_OUT }}
-          className="absolute left-6 top-[69vh] z-20 md:left-16"
-        >
-          <p className="text-[16px] font-medium leading-[1.45] text-ink md:text-[19px]">
+        {/* Left column: tagline + signature (grouped so spacing can't collapse) */}
+        <div className="absolute left-6 top-[65%] z-20 md:left-16 md:top-[69%]">
+          <motion.p
+            initial={reduced ? false : { opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.7, ease: EASE_OUT }}
+            className="[text-shadow:0_2px_18px_rgba(0,0,0,0.55)] text-[16px] font-medium leading-[1.45] text-ink md:text-[19px]"
+          >
             Building AI-Powered Tools
             <br />
             That Empower Developers
-          </p>
-        </motion.div>
+          </motion.p>
 
-        {/* Signature — handwriting-style wipe (script font, real name) */}
-        <motion.div
-          initial={
-            reduced ? false : { opacity: 0, y: 24, rotate: -8, clipPath: "inset(0 100% 0 0)" }
-          }
-          animate={{ opacity: 1, y: 0, rotate: -4, clipPath: "inset(0 0% 0 0)" }}
-          transition={{ delay: 0.72, duration: 0.9, ease: EASE_OUT }}
-          className="absolute left-6 top-[76.5vh] z-20 md:left-16"
-        >
-          <span className="font-script text-[34px] leading-none text-ink md:text-[44px]">
-            Girish Lade
-          </span>
-        </motion.div>
+          {/* Signature — handwriting-style wipe (script font, real name) */}
+          <motion.div
+            initial={
+              reduced ? false : { opacity: 0, y: 24, rotate: -8, clipPath: "inset(0 100% 0 0)" }
+            }
+            animate={{ opacity: 1, y: 0, rotate: -4, clipPath: "inset(0 0% 0 0)" }}
+            transition={{ delay: 0.72, duration: 0.9, ease: EASE_OUT }}
+            className="mt-2.5 md:mt-3"
+          >
+            <span className="[text-shadow:0_2px_18px_rgba(0,0,0,0.55)] font-script text-[34px] leading-none text-ink md:text-[44px]">
+              Girish Lade
+            </span>
+          </motion.div>
+        </div>
 
         {/* Right column: 20 / 26 */}
         <motion.div
           initial={reduced ? false : { opacity: 0, x: 32 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.66, duration: 0.7, ease: EASE_OUT }}
-          className="absolute right-6 top-[63vh] z-20 text-right font-heading text-[clamp(64px,6vw,115px)] font-semibold leading-[1.09] text-ink md:right-16"
+          className="[text-shadow:0_2px_18px_rgba(0,0,0,0.55)] absolute right-5 top-[61%] z-20 text-right font-heading text-[clamp(52px,13vw,115px)] font-semibold leading-[1.09] text-ink sm:top-[63%] sm:text-[clamp(64px,6vw,115px)] md:right-16"
         >
           20
           <br />
