@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AUTON — Girish Lade Portfolio (Next.js)
 
-## Getting Started
+Animated dark-theme portfolio built with **Next.js 16 (App Router) + TypeScript + Tailwind CSS v4 + Framer Motion + Lenis**, designed 1:1 from the reference video in the repo root.
 
-First, run the development server:
+## Local development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # production build (also type-checks)
+npm start          # serve the production build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deploy to Vercel
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The app lives in the `website/` subfolder of this repository.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Push this repo to GitHub (already done).
+2. Go to [vercel.com/new](https://vercel.com/new) and **Import** the `girishlade111/AUTON` repository.
+3. In the import screen, set **Root Directory** to `website` — Vercel auto-detects Next.js and fills in the build settings (`npm run build`, output `.next`). Leave everything else default.
+4. Add the environment variable (optional but recommended):
 
-## Learn More
+   | Key | Value | Notes |
+   |---|---|---|
+   | `NEXT_PUBLIC_SITE_URL` | `https://<your-domain>.vercel.app` or your custom domain | Drives canonical URLs, Open Graph tags, robots.txt and sitemap.xml |
 
-To learn more about Next.js, take a look at the following resources:
+5. Click **Deploy**. Every push to `main` redeploys automatically; pull requests get preview URLs.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Custom domain (optional)
+Vercel → Project → Settings → Domains → add your domain, then point your DNS at Vercel (instructions shown in the dashboard). Update `NEXT_PUBLIC_SITE_URL` to the final domain afterwards.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Production optimizations already in place
 
-## Deploy on Vercel
+- Fully static prerender (`/` served from Vercel's edge CDN)
+- AVIF/WebP image pipeline via `next/image` + long-lived cache headers for `/images/*`
+- Hero photo compressed (78 KB, was 1.4 MB) with `priority` loading
+- Security headers (`X-Frame-Options`, `nosniff`, Referrer-Policy, Permissions-Policy), `X-Powered-By` removed
+- `robots.txt` + `sitemap.xml` routes generated from `NEXT_PUBLIC_SITE_URL`
+- `prefers-reduced-motion` support; keyboard-accessible nav and forms
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Content TODOs (marked in code)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `src/components/Hero.tsx` — swap the hero photo for a real one
+- `src/components/Services.tsx` / `Projects.tsx` — replace placeholder screenshots in `public/images/`
+- `src/components/Contact.tsx` — real LinkedIn/X URLs, wire the form stub to a backend
+- `src/components/Testimonials.tsx` — add real quotes

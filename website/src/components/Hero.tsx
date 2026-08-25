@@ -54,11 +54,11 @@ export default function Hero() {
           transition={{ duration: 1.1, ease: EASE_OUT }}
           className="absolute inset-x-0 -top-[7vh] h-[114vh]"
         >
-          {/* TODO: Replace /images/hero-portrait.png with your real professional
+          {/* TODO: Replace /images/hero-portrait.jpg with your real professional
               photo (16:9 landscape, black studio background — see prompt 14 for
               the outpainting recipe). Container/crop must stay unchanged. */}
           <Image
-            src="/images/hero-portrait.png"
+            src="/images/hero-portrait.jpg"
             alt="Portrait of Girish Lade"
             fill
             priority
