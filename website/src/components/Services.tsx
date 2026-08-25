@@ -11,36 +11,34 @@ import { scrollToSection } from "@/lib/scrollTo";
    a tilted photo pops in center-left, description fades in on the right. */
 
 const EASE_OUT = [...EASE.out] as [number, number, number, number];
-const EASE_INOUT = [...EASE.inOut] as [number, number, number, number];
 
-/* NOTE (content swap): images below are placeholders from the reference video.
-   TODO: Replace each /images/service-*.jpg with a real screenshot of the
-   matching Lade Stack tool (same crop/aspect — the tilted display is CSS). */
+/* NOTE (content swap): each row now uses a brand-exact Lade Stack visual
+   (indigo #6366F1 accent system) matching the service it illustrates. */
 
 const SERVICES = [
   {
     title: "AI Product Development",
-    img: "/images/service-brand.jpg", // TODO: real screenshot (e.g. LadeStack Coder)
+    img: "/images/service-brand.jpg", // AI suggestion accepted in a dark editor
     desc: "Designing and building AI-powered SaaS tools from concept to production, using LLM APIs (NVIDIA NIM, Gemini) for real functionality, not just wrappers.",
   },
   {
     title: "Full-Stack Development",
-    img: "/images/service-marketing.jpg", // TODO: real screenshot (e.g. LadeStack dashboard)
+    img: "/images/service-marketing.jpg", // browser + deploy terminal + database diagram
     desc: "React, Next.js, Vite, Node.js — building fast, client-first, no-login web apps that solve real developer problems.",
   },
   {
     title: "UI/UX Design",
-    img: "/images/service-webdev.jpg", // TODO: real screenshot (e.g. LadeDesign flow output)
+    img: "/images/service-webdev.jpg", // wireframe-to-final UI on a design tablet
     desc: "Crafting clean, functional interfaces for developer tools, prioritizing speed and clarity over decoration.",
   },
   {
     title: "AI-Directed (Vibe) Coding",
-    img: "/images/service-uiux.jpg", // TODO: real screenshot (e.g. LS CLI terminal session)
+    img: "/images/service-uiux.jpg", // LS CLI agent session shipping a feature
     desc: "Using Claude Code, Cursor, and Gemini CLI to architect and ship production apps solo, at a pace normal solo dev can't match.",
   },
   {
     title: "Product Strategy & Positioning",
-    img: "/images/service-graphics.jpg", // TODO: real screenshot (e.g. ladestack.in landing page)
+    img: "/images/service-graphics.jpg", // 10x growth chart vs competitors
     desc: "Scoping MVPs, picking defensible niches, avoiding AI-wrapper traps, and shipping for a global audience.",
   },
 ];

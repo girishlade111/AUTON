@@ -6,54 +6,59 @@ import SectionLabel from "@/components/SectionLabel";
 import { EASE, VIEWPORT_ONCE } from "@/lib/motion";
 
 /* Prompt 08 — staggered editorial project grid with column guides.
-   Content: real Lade Stack products. The template has exactly 5 slots, so the
-   top-4 recommended products are joined by LS CLI to fill every slot without
-   changing the grid.
-
-   NOTE (content swap): the images below are placeholders from the reference
-   video. TODO: Replace each /images/project-*.png with a real screenshot of
-   the product (same aspect ratio — keep filenames). */
+   Content: the five live Lade Stack products. Each card links to its
+   production URL and uses a brand-exact product visual. */
 
 const EASE_OUT = [...EASE.out] as [number, number, number, number];
 
 const PROJECTS = [
   {
-    name: "LadeStack Coder",
-    img: "/images/project-coder.png", // TODO: real screenshot — code.ladestack.in
-    w: 817,
-    h: 617,
+    name: "GB Coder",
+    tagline: "AI-powered code playground",
+    url: "https://code.ladestack.in",
+    img: "/images/project-gbcoder.png",
+    w: 816,
+    h: 616,
     wrap: "lg:col-span-5 lg:col-start-1",
     sizes: "(min-width:1024px) 42vw, 92vw",
   },
   {
-    name: "LadeDesign",
-    img: "/images/project-designed.png", // TODO: real screenshot — design.ladestack.in
-    w: 397,
-    h: 265,
+    name: "Image Tools",
+    tagline: "Free browser-based image toolkit",
+    url: "https://img.ladestack.in",
+    img: "/images/project-imgtools.png",
+    w: 396,
+    h: 264,
     wrap: "lg:col-span-3 lg:col-start-10 lg:mt-6",
     sizes: "(min-width:1024px) 24vw, 92vw",
   },
   {
-    name: "LadeStack Notes",
-    img: "/images/project-notes.png", // TODO: real screenshot — RAG chat / flashcards UI
-    w: 1087,
-    h: 817,
+    name: "Lade Stack",
+    tagline: "The flagship AI developer platform",
+    url: "https://ladestack.in",
+    img: "/images/project-ladestack.png",
+    w: 1086,
+    h: 816,
     wrap: "lg:col-span-7 lg:col-start-6 lg:-mt-10",
     sizes: "(min-width:1024px) 56vw, 92vw",
   },
   {
     name: "LS PDF",
-    img: "/images/project-pdf.png", // TODO: real screenshot — pdf.ladestack.in
+    tagline: "17 free online PDF tools",
+    url: "https://pdf.ladestack.in",
+    img: "/images/project-lspdf.png",
     w: 822,
-    h: 605,
+    h: 604,
     wrap: "lg:col-span-5 lg:col-start-1",
     sizes: "(min-width:1024px) 42vw, 92vw",
   },
   {
-    name: "LS CLI",
-    img: "/images/project-cli.png", // TODO: real screenshot — terminal session
-    w: 397,
-    h: 297,
+    name: "Driving Vibes",
+    tagline: "Ad-free music streaming for drivers",
+    url: "https://drive.ladestack.in",
+    img: "/images/project-drivingvibes.png",
+    w: 396,
+    h: 296,
     wrap: "lg:col-span-3 lg:col-start-10 lg:mt-24",
     sizes: "(min-width:1024px) 24vw, 92vw",
   },
@@ -93,19 +98,36 @@ export default function Projects() {
               transition={{ duration: 0.9, ease: EASE_OUT, delay: (i % 2) * 0.12 }}
               className={project.wrap}
             >
-              <div className="relative w-full overflow-hidden rounded-[20px]">
-                <Image
-                  src={project.img}
-                  alt={`${project.name} — product screenshot`}
-                  width={project.w}
-                  height={project.h}
-                  sizes={project.sizes}
-                  className="h-auto w-full"
-                />
-              </div>
-              <h3 className="mt-5 font-heading text-[clamp(22px,2.2vw,34px)] font-semibold uppercase leading-none text-ink">
-                {project.name}
-              </h3>
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${project.name} — ${project.tagline} (opens in a new tab)`}
+                className="group block"
+              >
+                <div className="relative w-full overflow-hidden rounded-[20px] ring-1 ring-line-soft transition-shadow duration-500 group-hover:shadow-[0_24px_80px_rgba(99,102,241,0.25)]">
+                  <Image
+                    src={project.img}
+                    alt={`${project.name} — ${project.tagline}`}
+                    width={project.w}
+                    height={project.h}
+                    sizes={project.sizes}
+                    className="h-auto w-full transition-transform duration-700 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:scale-[1.03]"
+                  />
+                </div>
+                <h3 className="mt-5 flex items-baseline gap-3 font-heading text-[clamp(22px,2.2vw,34px)] font-semibold uppercase leading-none text-ink">
+                  {project.name}
+                  <span
+                    aria-hidden
+                    className="inline-block translate-y-[1px] text-[0.6em] text-accent opacity-0 transition-all duration-500 group-hover:translate-x-1 group-hover:opacity-100"
+                  >
+                    ↗
+                  </span>
+                </h3>
+                <p className="mt-1.5 text-[14px] text-muted md:text-[15px]">
+                  {project.tagline}
+                </p>
+              </a>
             </motion.article>
           ))}
         </div>
