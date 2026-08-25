@@ -11,7 +11,13 @@ import {
 import { EASE } from "@/lib/motion";
 
 /* Prompt 02 — Hero layout + staggered load cascade.
-   Prompt 03 — whole composition parallaxes out at ~0.55x scroll speed. */
+   Prompt 03 — whole composition parallaxes out at ~0.55x scroll speed.
+
+   Layout measured from the reference recording (1920×1080):
+   - Portrait: full-bleed cover, subject centered, melts into black at bottom.
+   - Wordmark: ~91vw wide, cap-top ≈ 42vh, gradient white → #3f3f42.
+   - Tagline top ≈ 69vh / signature top ≈ 76.5vh (left 64px).
+   - "20 / 26" top ≈ 64vh (right 64px), ~115px condensed numerals. */
 
 const EASE_OUT = [...EASE.out] as [number, number, number, number];
 
@@ -30,7 +36,7 @@ export default function Hero() {
 
   const entrance = reduced
     ? false
-    : ({ opacity: 0, scale: 1.04, y: 24 } as const);
+    : ({ opacity: 0, scale: 1.04 } as const);
 
   return (
     <section
@@ -39,28 +45,24 @@ export default function Hero() {
     >
       {/* Parallax group: portrait + wordmark + columns */}
       <motion.div style={parallaxStyle} className="absolute inset-0">
-        {/* Portrait — melts into black at the bottom */}
+        {/* Portrait — full-bleed, subject centered, baked black fade at bottom.
+            Extended above the viewport so the hairline sits near the top edge
+            (matches reference framing). */}
         <motion.div
           initial={entrance}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.1, ease: EASE_OUT }}
-          className="absolute left-1/2 top-0 w-[130vw] -translate-x-1/2 min-[480px]:w-[min(94vw,1350px)]"
+          className="absolute inset-x-0 -top-[7vh] h-[114vh]"
         >
           <Image
             src="/images/hero-portrait.png"
             alt="Portrait of Auton Foster"
-            width={1920}
-            height={1080}
+            fill
             priority
-            className="h-auto w-full [mask-image:linear-gradient(to_bottom,black_42%,transparent_88%)]"
+            sizes="100vw"
+            className="object-cover object-top [mask-image:linear-gradient(to_bottom,black_78%,transparent_100%)]"
           />
         </motion.div>
-
-        {/* Scrim — keeps the wordmark legible over the bright shirt */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-[30vh] z-10 h-[46vh] bg-gradient-to-b from-transparent via-black/45 to-black"
-        />
 
         {/* Giant gradient wordmark over the portrait */}
         <motion.h1
@@ -68,11 +70,11 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 1.0, ease: EASE_OUT }}
           aria-label="Auton Foster — Designing Digital Experiences That Inspire"
-          className="pointer-events-none absolute left-0 right-0 top-[37vh] z-20 select-none text-center"
+          className="pointer-events-none absolute inset-x-0 top-[37.5vh] z-20 select-none text-center"
         >
           <span
             aria-hidden
-            className="wordmark-gradient whitespace-nowrap font-display text-[clamp(44px,13vw,210px)] font-extrabold leading-[1.05] tracking-[-0.02em]"
+            className="wordmark-gradient whitespace-nowrap font-display text-[clamp(48px,14vw,270px)] font-extrabold leading-none tracking-[-0.02em]"
           >
             Auton Foster
           </span>
@@ -83,9 +85,9 @@ export default function Hero() {
           initial={reduced ? false : { opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.7, ease: EASE_OUT }}
-          className="absolute bottom-[24%] left-5 z-20 md:left-8 md:top-[57%] md:bottom-auto"
+          className="absolute left-6 top-[69vh] z-20 md:left-16"
         >
-          <p className="text-[16px] leading-[1.45] text-ink md:text-[17px]">
+          <p className="text-[16px] font-medium leading-[1.45] text-ink md:text-[19px]">
             Designing Digital Experiences
             <br />
             That Inspire
@@ -99,7 +101,7 @@ export default function Hero() {
           }
           animate={{ opacity: 1, y: 0, rotate: -4, clipPath: "inset(0 0% 0 0)" }}
           transition={{ delay: 0.72, duration: 0.9, ease: EASE_OUT }}
-          className="absolute bottom-[15%] left-5 z-20 md:left-8 md:top-[68%] md:bottom-auto"
+          className="absolute left-6 top-[76.5vh] z-20 md:left-16"
         >
           <Image
             src="/images/signature.png"
@@ -107,7 +109,7 @@ export default function Hero() {
             unoptimized
             width={180}
             height={64}
-            className="w-[110px] mix-blend-screen md:w-[130px]"
+            className="w-[100px] mix-blend-screen md:w-[147px]"
           />
         </motion.div>
 
@@ -116,7 +118,7 @@ export default function Hero() {
           initial={reduced ? false : { opacity: 0, x: 32 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.66, duration: 0.7, ease: EASE_OUT }}
-          className="absolute bottom-[26%] right-5 z-20 text-right font-heading text-[clamp(56px,5vw,92px)] font-semibold leading-[1.05] text-ink md:right-8 md:top-[57%] md:bottom-auto"
+          className="absolute right-6 top-[63vh] z-20 text-right font-heading text-[clamp(64px,6vw,115px)] font-semibold leading-[1.09] text-ink md:right-16"
         >
           20
           <br />
@@ -129,7 +131,7 @@ export default function Hero() {
         initial={reduced ? false : { opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.45, duration: 0.6, ease: EASE_OUT }}
-        className="absolute left-5 top-6 z-30 md:left-8 md:top-8"
+        className="absolute left-5 top-6 z-30 md:left-14 md:top-8"
       >
         <Image
           src="/images/logo.png"
@@ -138,7 +140,7 @@ export default function Hero() {
           aria-hidden
           width={72}
           height={72}
-          className="h-11 w-11 mix-blend-screen"
+          className="h-[52px] w-[52px] mix-blend-screen md:h-[70px] md:w-[70px]"
         />
       </motion.div>
       <motion.div
@@ -146,13 +148,13 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.55, duration: 0.6, ease: EASE_OUT }}
         role="status"
-        className="absolute right-5 top-6 z-30 flex items-center gap-2.5 md:right-8 md:top-8"
+        className="absolute right-5 top-6 z-30 flex items-center gap-2.5 md:right-20 md:top-[52px]"
       >
         <span className="relative flex h-2.5 w-2.5">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
           <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent" />
         </span>
-        <span className="text-[15px] text-ink/90">available for work</span>
+        <span className="text-[15px] text-ink/90 md:text-[16px]">available for work</span>
       </motion.div>
     </section>
   );
