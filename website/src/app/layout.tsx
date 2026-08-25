@@ -45,7 +45,13 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Girish Lade, solo founder of Lade Stack — free, no-login, AI-powered developer tools. Mechanical engineer turned software builder, vibe-coding products end-to-end.",
   alternates: { canonical: "/" },
-  icons: { icon: "/images/logo.png" },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/images/logo.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [{ url: "/images/logo.png" }],
+  },
   openGraph: {
     type: "website",
     url: "/",

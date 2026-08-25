@@ -133,12 +133,11 @@ export default function Hero() {
       >
         <Image
           src="/images/logo.png"
-          alt=""
+          alt="Lade Stack logo"
           unoptimized
-          aria-hidden
           width={72}
           height={72}
-          className="h-[52px] w-[52px] mix-blend-screen md:h-[70px] md:w-[70px]"
+          className="h-[52px] w-[52px] rounded-[14px] shadow-[0_6px_24px_rgba(99,102,241,0.45)] md:h-[70px] md:w-[70px] md:rounded-[18px]"
         />
       </motion.div>
       <motion.div
