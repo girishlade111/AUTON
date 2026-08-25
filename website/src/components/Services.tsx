@@ -100,7 +100,9 @@ export default function Services() {
                 onBlur={() => setActive((cur) => (cur === i ? null : cur))}
                 onClick={(e) => {
                   /* Touch: first tap expands, second tap navigates */
-                  const touch = window.matchMedia("(hover: none)").matches;
+                  const touch =
+                    window.matchMedia("(hover: none), (pointer: coarse)").matches ||
+                    "ontouchstart" in window;
                   if (touch && !isActive) {
                     e.preventDefault();
                     setActive(i);
