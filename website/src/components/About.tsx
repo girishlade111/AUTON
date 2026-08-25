@@ -13,8 +13,7 @@ import SectionLabel from "@/components/SectionLabel";
 /* Prompt 05 — scroll-linked word-by-word text reveal (reversible).
    Words scrub from #3d3d3f to #ffffff as the block travels 85% → 25% of viewport. */
 
-const STATEMENT =
-  "I'm a passionate designer and developer dedicated to creating modern, user-focused digital experiences. From building strong brand identities to designing intuitive interfaces and developing responsive websites, I help businesses transform ideas into impactful digital products.";
+const STATEMENT = `I'm a mechanical engineer turned self-taught software builder, currently transitioning into a full-time software engineering career. I'm the solo founder of Lade Stack (ladestack.in) — a growing suite of free, no-login, AI-powered developer tools built entirely by me, end-to-end, from idea to deployment. I direct AI coding tools to design, build, and ship real products rather than writing every line by hand — a workflow I call 'vibe coding.' My journey started in a manufacturing plant in Pune, and I'm now building toward product engineering roles at companies like VMware, SAP, and Cisco, with MAANG as the long-term goal.`;
 
 const WORDS = STATEMENT.split(" ");
 

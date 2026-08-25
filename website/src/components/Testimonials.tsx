@@ -6,32 +6,22 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import SectionLabel from "@/components/SectionLabel";
 import { EASE, VIEWPORT_ONCE } from "@/lib/motion";
 
-/* Prompt 10 — avatar switcher + crossfading uppercase quote */
+/* Prompt 10 — avatar switcher + crossfading uppercase quote.
+
+   TODO (content swap): Replace this placeholder with 1–2 real quotes from
+   Lade Stack users, beta testers, or LinkedIn feedback. Keep the same object
+   shape — set `avatar` to an image path for a real photo, or leave it null to
+   render the initials circle. */
 
 const EASE_OUT = [...EASE.out] as [number, number, number, number];
 const EASE_SOFT = [...EASE.soft] as [number, number, number, number];
 
 const TESTIMONIALS = [
   {
-    name: "Sarah Johnson",
-    role: "Founder, NovaTech",
-    avatar: "/images/avatar-1.jpg",
-    quote:
-      "Working with Milan was a fantastic experience. The website design was modern, intuitive, and exceeded our expectations. Communication was smooth, and every detail was thoughtfully crafted.",
-  },
-  {
-    name: "Daniel Reyes",
-    role: "CEO, Brightline Studio",
-    avatar: "/images/avatar-2.jpg",
-    quote:
-      "Auton delivered our platform ahead of schedule without cutting a single corner. The attention to detail and the polish of the final product genuinely surprised our whole team.",
-  },
-  {
-    name: "Emily Carter",
-    role: "Product Lead, Loopwork",
-    avatar: "/images/avatar-3.jpg",
-    quote:
-      "From the first call to the final handoff, everything was clear, fast, and precise. Our conversion rate jumped within weeks of launching the new design.",
+    name: "Lade Stack",
+    role: "User Feedback",
+    avatar: null, // TODO: real photo path, or keep initials circle
+    quote: "Testimonial coming soon.",
   },
 ];
 
@@ -51,7 +41,7 @@ export default function Testimonials() {
         transition={{ duration: 0.9, ease: EASE_OUT }}
         className="heading-giant text-center"
       >
-        Trusted by Clients
+        What People Say
       </motion.h2>
 
       <div className="mx-auto mt-20 grid max-w-[1200px] grid-cols-1 items-start gap-12 px-6 lg:grid-cols-[auto_1fr] lg:gap-20">
@@ -72,13 +62,22 @@ export default function Testimonials() {
                     : "h-[72px] w-[72px] opacity-60 hover:opacity-85"
                 }`}
               >
-                <Image
-                  src={t.avatar}
-                  alt={`Portrait of ${t.name}`}
-                  fill
-                  sizes="110px"
-                  className="object-cover"
-                />
+                {t.avatar ? (
+                  <Image
+                    src={t.avatar}
+                    alt={`Portrait of ${t.name}`}
+                    fill
+                    sizes="110px"
+                    className="object-cover"
+                  />
+                ) : (
+                  <span className="flex h-full w-full items-center justify-center bg-raised font-heading text-[28px] font-semibold uppercase text-muted">
+                    {t.name
+                      .split(" ")
+                      .map((w) => w[0])
+                      .join("")}
+                  </span>
+                )}
               </button>
             );
           })}

@@ -54,9 +54,12 @@ export default function Hero() {
           transition={{ duration: 1.1, ease: EASE_OUT }}
           className="absolute inset-x-0 -top-[7vh] h-[114vh]"
         >
+          {/* TODO: Replace /images/hero-portrait.png with your real professional
+              photo (16:9 landscape, black studio background — see prompt 14 for
+              the outpainting recipe). Container/crop must stay unchanged. */}
           <Image
             src="/images/hero-portrait.png"
-            alt="Portrait of Auton Foster"
+            alt="Portrait of Girish Lade"
             fill
             priority
             sizes="100vw"
@@ -69,14 +72,14 @@ export default function Hero() {
           initial={reduced ? false : { opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 1.0, ease: EASE_OUT }}
-          aria-label="Auton Foster — Designing Digital Experiences That Inspire"
+          aria-label="Girish Lade — Building AI-Powered Tools That Empower Developers"
           className="pointer-events-none absolute inset-x-0 top-[37.5vh] z-20 select-none text-center"
         >
           <span
             aria-hidden
             className="wordmark-gradient whitespace-nowrap font-display text-[clamp(48px,14vw,270px)] font-extrabold leading-none tracking-[-0.02em]"
           >
-            Auton Foster
+            Girish Lade
           </span>
         </motion.h1>
 
@@ -88,13 +91,13 @@ export default function Hero() {
           className="absolute left-6 top-[69vh] z-20 md:left-16"
         >
           <p className="text-[16px] font-medium leading-[1.45] text-ink md:text-[19px]">
-            Designing Digital Experiences
+            Building AI-Powered Tools
             <br />
-            That Inspire
+            That Empower Developers
           </p>
         </motion.div>
 
-        {/* Signature — handwriting-style wipe */}
+        {/* Signature — handwriting-style wipe (script font, real name) */}
         <motion.div
           initial={
             reduced ? false : { opacity: 0, y: 24, rotate: -8, clipPath: "inset(0 100% 0 0)" }
@@ -103,14 +106,9 @@ export default function Hero() {
           transition={{ delay: 0.72, duration: 0.9, ease: EASE_OUT }}
           className="absolute left-6 top-[76.5vh] z-20 md:left-16"
         >
-          <Image
-            src="/images/signature.png"
-            alt="Auton Foster signature"
-            unoptimized
-            width={180}
-            height={64}
-            className="w-[100px] mix-blend-screen md:w-[147px]"
-          />
+          <span className="font-script text-[34px] leading-none text-ink md:text-[44px]">
+            Girish Lade
+          </span>
         </motion.div>
 
         {/* Right column: 20 / 26 */}

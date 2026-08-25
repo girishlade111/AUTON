@@ -28,9 +28,9 @@ const signature = Mrs_Saint_Delafield({
 });
 
 export const metadata: Metadata = {
-  title: "Auton Foster — Designing Digital Experiences That Inspire",
+  title: "Girish Lade — Building AI-Powered Tools That Empower Developers",
   description:
-    "Portfolio of Auton Foster, a passionate designer and developer creating modern, user-focused digital experiences.",
+    "Portfolio of Girish Lade, solo founder of Lade Stack — free, no-login, AI-powered developer tools. Mechanical engineer turned software builder, vibe-coding products end-to-end.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

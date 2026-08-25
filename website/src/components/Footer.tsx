@@ -12,8 +12,8 @@ const EASE_OUT = [...EASE.out] as [number, number, number, number];
 const LINKS = [
   { label: "About", hash: "#about" },
   { label: "Services", hash: "#services" },
-  { label: "Project", hash: "#projects" },
-  { label: "My Skill", hash: "#skills" },
+  { label: "Products", hash: "#projects" },
+  { label: "Skills", hash: "#skills" },
   { label: "Testimonials", hash: "#testimonials" },
   { label: "Contact", hash: "#contact" },
 ];
@@ -31,9 +31,9 @@ export default function Footer() {
         aria-hidden
         className="select-none text-center font-display text-[clamp(64px,11vw,180px)] font-extrabold leading-[0.95] tracking-[-0.02em] text-ink max-sm:whitespace-normal sm:whitespace-nowrap"
       >
-        Auton Foster
+        Lade Stack
       </motion.p>
-      <h2 className="sr-only">Auton Foster — footer navigation</h2>
+      <h2 className="sr-only">Lade Stack — footer navigation</h2>
 
       <motion.ul
         variants={staggerParent}
@@ -69,7 +69,7 @@ export default function Footer() {
       </motion.ul>
 
       <p className="mt-8 text-center text-[13.5px] text-muted">
-        ©2026 Auton. All rights reserved.
+        © 2026 Girish Lade / Lade Stack. All rights reserved.
       </p>
     </footer>
   );

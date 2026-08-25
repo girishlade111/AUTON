@@ -10,7 +10,7 @@ const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 const LINKS = [
   { label: "About", hash: "#about" },
   { label: "Services", hash: "#services" },
-  { label: "Project", hash: "#projects" },
+  { label: "Products", hash: "#projects" },
   { label: "Contact", hash: "#contact" },
 ];
 
@@ -45,11 +45,12 @@ export default function NavPill() {
           ))}
         </ul>
         <a
-          href="#contact"
-          onClick={(e) => go(e, "#contact")}
+          href="https://ladestack.in"
+          target="_blank"
+          rel="noopener noreferrer"
           className="rounded-full bg-[#4a4a4d] px-3 py-2.5 text-[14px] font-medium text-white transition-colors duration-300 hover:bg-white hover:text-black active:bg-white/90 min-[420px]:px-4 sm:px-6 sm:py-[17px] sm:text-[17px]"
         >
-          Get Now
+          Explore Lade Stack
         </a>
       </div>
     </motion.nav>

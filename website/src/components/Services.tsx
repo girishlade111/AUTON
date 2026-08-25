@@ -13,31 +13,35 @@ import { scrollToSection } from "@/lib/scrollTo";
 const EASE_OUT = [...EASE.out] as [number, number, number, number];
 const EASE_INOUT = [...EASE.inOut] as [number, number, number, number];
 
+/* NOTE (content swap): images below are placeholders from the reference video.
+   TODO: Replace each /images/service-*.jpg with a real screenshot of the
+   matching Lade Stack tool (same crop/aspect — the tilted display is CSS). */
+
 const SERVICES = [
   {
-    title: "Brand Identity",
-    img: "/images/service-brand.jpg",
-    desc: "Build a memorable brand with unique logos, typography, color palettes, and visual systems.",
+    title: "AI Product Development",
+    img: "/images/service-brand.jpg", // TODO: real screenshot (e.g. LadeStack Coder)
+    desc: "Designing and building AI-powered SaaS tools from concept to production, using LLM APIs (NVIDIA NIM, Gemini) for real functionality, not just wrappers.",
   },
   {
-    title: "Marketing",
-    img: "/images/service-marketing.jpg",
-    desc: "Design social media graphics, banners, presentations, and promotional assets that strengthen your brand.",
+    title: "Full-Stack Development",
+    img: "/images/service-marketing.jpg", // TODO: real screenshot (e.g. LadeStack dashboard)
+    desc: "React, Next.js, Vite, Node.js — building fast, client-first, no-login web apps that solve real developer problems.",
   },
   {
-    title: "Web Development",
-    img: "/images/service-webdev.jpg",
-    desc: "Create responsive, fast, and SEO-friendly websites with clean code and seamless performance.",
+    title: "UI/UX Design",
+    img: "/images/service-webdev.jpg", // TODO: real screenshot (e.g. LadeDesign flow output)
+    desc: "Crafting clean, functional interfaces for developer tools, prioritizing speed and clarity over decoration.",
   },
   {
-    title: "UI UX Design",
-    img: "/images/service-uiux.jpg",
-    desc: "Design intuitive websites, mobile apps, dashboards, and SaaS products that deliver exceptional user experiences.",
+    title: "AI-Directed (Vibe) Coding",
+    img: "/images/service-uiux.jpg", // TODO: real screenshot (e.g. LS CLI terminal session)
+    desc: "Using Claude Code, Cursor, and Gemini CLI to architect and ship production apps solo, at a pace normal solo dev can't match.",
   },
   {
-    title: "Graphics Design",
-    img: "/images/service-graphics.jpg",
-    desc: "Produce professional print and digital designs, including brochures, business cards, posters, and marketing materials.",
+    title: "Product Strategy & Positioning",
+    img: "/images/service-graphics.jpg", // TODO: real screenshot (e.g. ladestack.in landing page)
+    desc: "Scoping MVPs, picking defensible niches, avoiding AI-wrapper traps, and shipping for a global audience.",
   },
 ];
 
@@ -75,9 +79,7 @@ export default function Services() {
         viewport={VIEWPORT_ONCE}
         className="heading-giant text-center"
       >
-        Services that drive
-        <br />
-        Brands
+        What I Build
       </motion.h2>
 
       <ul className="mt-16">

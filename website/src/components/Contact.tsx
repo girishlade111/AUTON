@@ -11,10 +11,28 @@ import { EASE, VIEWPORT_ONCE } from "@/lib/motion";
 const EASE_OUT = [...EASE.out] as [number, number, number, number];
 
 const SOCIALS = [
-  { label: "LinkedIn", href: "https://www.linkedin.com", d: "M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" },
-  { label: "Behance", href: "https://www.behance.net", d: "M8.84 10.84c.7-.33 1.18-1.03 1.18-1.98 0-2.05-1.6-2.6-3.42-2.6H1v11.48h5.76c1.9 0 3.87-.9 3.87-3.69 0-1.38-.66-2.76-1.79-3.21zM3.9 8.6h2.13c.83 0 1.56.23 1.56 1.19 0 .9-.6 1.24-1.44 1.24H3.9V8.6zm2.43 6.8H3.9v-2.94h2.5c1 0 1.66.42 1.66 1.5 0 1.06-.78 1.44-1.73 1.44zM18.32 9.1c-2.62 0-4.4 1.97-4.4 4.55 0 2.68 1.68 4.5 4.4 4.5 2.07 0 3.4-.93 4.05-2.9h-2.06c-.22.7-.98 1.08-1.86 1.08-1.24 0-1.9-.72-2-2h6.02c.15-2.7-1.32-5.23-4.15-5.23zm-1.87 3.7c.14-1.02.76-1.75 1.87-1.75 1.05 0 1.72.68 1.82 1.75h-3.69zM15.5 6.6h5.2v1.4h-5.2z" },
-  { label: "GitHub", href: "https://github.com", d: "M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z" },
-  { label: "Instagram", href: "https://www.instagram.com", d: "M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.64-.07-4.85s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95C23.73 2.7 21.31.27 16.95.07 15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4zm6.41-11.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z" },
+  {
+    label: "LinkedIn",
+    // TODO: replace with your real LinkedIn profile URL
+    href: "https://www.linkedin.com/",
+    d: "M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z",
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/girishlade111",
+    d: "M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z",
+  },
+  {
+    label: "X (Twitter)",
+    // TODO: replace with your real X/Twitter profile URL
+    href: "https://x.com/",
+    d: "M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z",
+  },
+  {
+    label: "Lade Stack",
+    href: "https://ladestack.in",
+    d: "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm7.93 9h-3.02a15.7 15.7 0 0 0-1.2-5.3A8.02 8.02 0 0 1 19.93 11zM12 4.04c.86 1.19 1.86 3.3 2.02 6.96h-4.04c.16-3.66 1.16-5.77 2.02-6.96zM4.07 13h3.02c.14 1.98.55 3.8 1.2 5.3A8.02 8.02 0 0 1 4.07 13zm3.02-2H4.07a8.02 8.02 0 0 1 4.22-5.3 15.7 15.7 0 0 0-1.2 5.3zm2.89 2h4.04c-.16 3.66-1.16 5.77-2.02 6.96-.86-1.19-1.86-3.3-2.02-6.96zm4.73 5.3c.65-1.5 1.06-3.32 1.2-5.3h3.02a8.02 8.02 0 0 1-4.22 5.3z",
+  },
 ];
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -51,7 +69,8 @@ export default function Contact() {
     e.preventDefault();
     if (!validate()) return;
     setStatus("loading");
-    /* Placeholder endpoint — swap for a server action / API route */
+    /* TODO (wiring): replace this stub with a real backend — a Next.js server
+       action, Formspree, or an API route that emails you the submission. */
     window.setTimeout(() => {
       setStatus("success");
       window.setTimeout(() => setStatus("idle"), 3000);
@@ -76,7 +95,7 @@ export default function Contact() {
         transition={{ duration: 0.9, ease: EASE_OUT }}
         className="heading-giant text-center"
       >
-        Start a Conversation
+        Let&rsquo;s Build Something
       </motion.h2>
 
       <div className="mx-auto mt-20 grid max-w-[1200px] grid-cols-1 gap-16 px-6 lg:grid-cols-2 lg:gap-24">
@@ -88,30 +107,23 @@ export default function Contact() {
           transition={{ duration: 0.8, ease: EASE_OUT }}
         >
           <p className="max-w-[380px] text-[15px] font-medium uppercase leading-[1.5] text-ink">
-            Have a project in mind? I&rsquo;d love to hear about your ideas and help
-            bring them to life.
+            Have an idea for an AI tool, a dev product, or want to collaborate
+            on something at Lade Stack? Reach out below.
           </p>
 
           <dl className="mt-12 space-y-8">
             <div>
+              {/* TODO: confirm this is the email you want public */}
               <dt className="font-heading text-[14px] uppercase tracking-[0.06em] text-muted">Email</dt>
               <dd className="mt-1">
-                <a href="mailto:hello@autonfoster.com" className="text-[16px] text-ink transition-colors hover:text-muted">
-                  hello@autonfoster.com
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt className="font-heading text-[14px] uppercase tracking-[0.06em] text-muted">Phone</dt>
-              <dd className="mt-1">
-                <a href="tel:+15555552847" className="text-[16px] text-ink transition-colors hover:text-muted">
-                  +1 (555) 555-2847
+                <a href="mailto:hello@ladestack.in" className="text-[16px] text-ink transition-colors hover:text-muted">
+                  hello@ladestack.in
                 </a>
               </dd>
             </div>
             <div>
               <dt className="font-heading text-[14px] uppercase tracking-[0.06em] text-muted">Location</dt>
-              <dd className="mt-1 text-[16px] text-ink">San Francisco, California, USA</dd>
+              <dd className="mt-1 text-[16px] text-ink">Pune, Maharashtra, India</dd>
             </div>
           </dl>
 

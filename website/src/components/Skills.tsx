@@ -1,38 +1,40 @@
 ﻿"use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import SectionLabel from "@/components/SectionLabel";
+import { BRAND_ICONS } from "@/lib/brand-icons";
 import { EASE, VIEWPORT_ONCE } from "@/lib/motion";
 
-/* Prompt 09 — infinite leftward logo marquee, constant speed, seamless loop. */
+/* Prompt 09 — infinite leftward logo marquee, constant speed, seamless loop.
+   Content: Girish Lade's actual stack (official single-color brand SVGs). */
 
 const EASE_OUT = [...EASE.out] as [number, number, number, number];
 
-const TOOLS = [
-  { name: "Tailwind CSS", img: "/images/icon-tailwind.png", w: 135 },
-  { name: "JavaScript", img: "/images/icon-js.png", w: 84 },
-  { name: "Framer", img: "/images/icon-framer.png", w: 84 },
-  { name: "Webflow", img: "/images/icon-webflow.png", w: 130 },
-  { name: "Figma", img: "/images/icon-figma.png", w: 104 },
-  { name: "Photoshop", img: "/images/icon-ps.png", w: 92 },
-  { name: "Illustrator", img: "/images/icon-ai.png", w: 92 },
+const TOOLS: { name: string; icon: string }[] = [
+  { name: "React", icon: "react" },
+  { name: "Next.js", icon: "nextdotjs" },
+  { name: "Node.js", icon: "nodedotjs" },
+  { name: "TypeScript", icon: "typescript" },
+  { name: "Tailwind CSS", icon: "tailwindcss" },
+  { name: "NVIDIA NIM / LLM APIs", icon: "nvidia" },
+  { name: "Supabase", icon: "supabase" },
+  { name: "Claude Code", icon: "claude" },
 ];
 
 function LogoSet({ ariaHidden }: { ariaHidden: boolean }) {
   return (
     <>
       {TOOLS.map((tool) => (
-        <Image
+        <svg
           key={tool.name + (ariaHidden ? "-dup" : "")}
-          src={tool.img}
-          unoptimized
-          alt={ariaHidden ? "" : tool.name}
-          aria-hidden={ariaHidden}
-          width={tool.w}
-          height={92}
-          className="h-[clamp(56px,5.5vw,84px)] w-auto mix-blend-screen"
-        />
+          viewBox="0 0 24 24"
+          role="img"
+          aria-label={ariaHidden ? undefined : tool.name}
+          aria-hidden={ariaHidden || undefined}
+          className="h-[clamp(56px,5.5vw,84px)] w-[clamp(56px,5.5vw,84px)] fill-[#6b6b6e]"
+        >
+          <path d={BRAND_ICONS[tool.icon]} />
+        </svg>
       ))}
     </>
   );
@@ -52,7 +54,7 @@ export default function Skills() {
         transition={{ duration: 0.9, ease: EASE_OUT }}
         className="heading-giant text-center"
       >
-        Skills that drive results
+        Tools I build with
       </motion.h2>
 
       {/* Screen-reader list (single announcement) */}
