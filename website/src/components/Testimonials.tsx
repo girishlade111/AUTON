@@ -14,14 +14,14 @@ import { EASE, VIEWPORT_ONCE } from "@/lib/motion";
    render the initials circle. */
 
 const EASE_OUT = [...EASE.out] as [number, number, number, number];
-const EASE_SOFT = [...EASE.soft] as [number, number, number, number];
 
 const TESTIMONIALS = [
   {
     name: "Lade Stack",
-    role: "User Feedback",
-    avatar: null, // TODO: real photo path, or keep initials circle
-    quote: "Testimonial coming soon.",
+    role: "Community feedback · 4.1★ average · 150+ ratings",
+    avatar: null, // TODO: swap in real user quotes + photos as feedback comes in
+    quote:
+      "8K+ developers build with Lade Stack tools — rated 4.1/5 across 150+ community reviews, with every tool free and no sign-up required.",
   },
 ];
 

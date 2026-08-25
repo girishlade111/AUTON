@@ -13,8 +13,7 @@ const EASE_OUT = [...EASE.out] as [number, number, number, number];
 const SOCIALS = [
   {
     label: "LinkedIn",
-    // TODO: replace with your real LinkedIn profile URL
-    href: "https://www.linkedin.com/",
+    href: "https://www.linkedin.com/in/girish-lade-075bba201/",
     d: "M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z",
   },
   {
@@ -24,8 +23,7 @@ const SOCIALS = [
   },
   {
     label: "X (Twitter)",
-    // TODO: replace with your real X/Twitter profile URL
-    href: "https://x.com/",
+    href: "https://x.com/girishlade",
     d: "M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z",
   },
   {
