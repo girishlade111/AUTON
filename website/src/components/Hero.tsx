@@ -134,6 +134,7 @@ export default function Hero() {
         <Image
           src="/images/logo.png"
           alt="Girish Lade logo"
+          priority
           unoptimized
           width={72}
           height={72}
