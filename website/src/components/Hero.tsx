@@ -133,11 +133,11 @@ export default function Hero() {
       >
         <Image
           src="/images/logo.png"
-          alt="Lade Stack logo"
+          alt="Girish Lade logo"
           unoptimized
           width={72}
           height={72}
-          className="h-[52px] w-[52px] rounded-[14px] shadow-[0_6px_24px_rgba(99,102,241,0.45)] md:h-[70px] md:w-[70px] md:rounded-[18px]"
+          className="h-[52px] w-[52px] rounded-[14px] shadow-[0_6px_24px_rgba(34,197,94,0.35)] md:h-[70px] md:w-[70px] md:rounded-[18px]"
         />
       </motion.div>
       <motion.div
