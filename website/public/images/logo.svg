@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <defs>
     <!-- hero .wordmark-gradient: ffffff 0 / e8e8e8 35 / 6a6a6a 78 / 3f3f42 100 -->
-    <linearGradient id="ink" x1="0" y1="96" x2="0" y2="420" gradientUnits="userSpaceOnUse">
+    <linearGradient id="ink" x1="0" y1="128" x2="0" y2="384" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ffffff"/>
       <stop offset="0.35" stop-color="#e8e8e8"/>
       <stop offset="0.78" stop-color="#6a6a6a"/>
@@ -12,11 +12,18 @@
       <stop offset="0" stop-color="#161618"/>
       <stop offset="1" stop-color="#000000"/>
     </linearGradient>
+    <!-- G aperture cut (upper-right wedge) -->
+    <mask id="gcut">
+      <rect width="512" height="512" fill="#fff"/>
+      <path d="M184 256 L246 139.5 A132 132 0 0 1 315.9 251.4 Z" fill="#000"/>
+    </mask>
   </defs>
   <rect width="512" height="512" rx="116" fill="url(#plate)"/>
   <rect x="6" y="6" width="500" height="500" rx="110" fill="none" stroke="#ffffff" stroke-opacity="0.16" stroke-width="8"/>
-  <polygon points="214,96 298,96 210,420 126,420" fill="url(#ink)"/>
-  <polygon points="214,96 298,96 386,420 302,420" fill="url(#ink)"/>
+  <!-- G -->
+  <circle cx="184" cy="256" r="98" fill="none" stroke="url(#ink)" stroke-width="60" mask="url(#gcut)"/>
+  <!-- L -->
+  <path d="M336 128 h60 v196 h60 v60 h-120 Z" fill="url(#ink)"/>
   <!-- --color-accent #22c55e -->
-  <rect x="164" y="292" width="184" height="58" rx="14" fill="#22c55e"/>
+  <rect x="184" y="256" width="128" height="60" rx="10" fill="#22c55e"/>
 </svg>
