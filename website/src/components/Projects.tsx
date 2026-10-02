@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import SectionLabel from "@/components/SectionLabel";
 import { EASE, VIEWPORT_ONCE } from "@/lib/motion";
+import { withBase } from "@/utils/basePath";
 
 /* Prompt 08 — staggered editorial project grid with column guides.
    Content: the five live Lade Stack products. Each card links to its
@@ -107,7 +108,7 @@ export default function Projects() {
               >
                 <div className="relative w-full overflow-hidden rounded-[20px] ring-1 ring-line-soft transition-shadow duration-500 group-hover:shadow-[0_24px_80px_rgba(99,102,241,0.25)]">
                   <Image
-                    src={project.img}
+                    src={withBase(project.img)}
                     alt={`${project.name} — ${project.tagline}`}
                     width={project.w}
                     height={project.h}

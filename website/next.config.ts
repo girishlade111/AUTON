@@ -10,12 +10,18 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   compress: true,
 
+  // Static export for GitHub Pages project-site hosting at /AUTON.
+  output: "export",
+  basePath: "/AUTON",
+
   turbopack: {
     root: path.resolve(appRoot),
   },
   outputFileTracingRoot: path.resolve(appRoot),
 
   images: {
+    // Static export has no image optimizer — serve originals.
+    unoptimized: true,
     // Vercel's image CDN serves AVIF with WebP fallback automatically.
     formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],

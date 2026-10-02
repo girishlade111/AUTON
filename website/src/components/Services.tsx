@@ -6,6 +6,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import SectionLabel from "@/components/SectionLabel";
 import { EASE, VIEWPORT_ONCE, fadeUp } from "@/lib/motion";
 import { scrollToSection } from "@/lib/scrollTo";
+import { withBase } from "@/utils/basePath";
 
 /* Prompt 07 — services list: rows wipe to white on hover/focus, title inverts,
    a tilted photo pops in center-left, description fades in on the right. */
@@ -135,7 +136,7 @@ export default function Services() {
                       className="relative aspect-[368/248] w-[clamp(240px,20vw,380px)]"
                     >
                       <Image
-                        src={service.img}
+                        src={withBase(service.img)}
                         alt=""
                         fill
                         sizes="(min-width: 1024px) 20vw, 60vw"
@@ -163,7 +164,7 @@ export default function Services() {
                     >
                       <div className="relative mb-3 aspect-[368/248] w-full max-w-[300px] -rotate-6">
                         <Image
-                          src={service.img}
+                          src={withBase(service.img)}
                           alt=""
                           fill
                           sizes="60vw"

@@ -44,29 +44,29 @@ export const metadata: Metadata = {
   title: "Girish Lade — Building AI-Powered Tools That Empower Developers",
   description:
     "Portfolio of Girish Lade, solo founder of Lade Stack — free, no-login, AI-powered developer tools. Mechanical engineer turned software builder, vibe-coding products end-to-end.",
-  alternates: { canonical: "/" },
+  alternates: { canonical: SITE_URL },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "48x48" },
-      { url: "/images/logo.png", type: "image/png", sizes: "512x512" },
+      { url: `${SITE_URL}/favicon.ico`, sizes: "48x48" },
+      { url: `${SITE_URL}/images/logo.png`, type: "image/png", sizes: "512x512" },
     ],
-    apple: [{ url: "/images/logo.png" }],
+    apple: [{ url: `${SITE_URL}/images/logo.png` }],
   },
   openGraph: {
     type: "website",
-    url: "/",
+    url: SITE_URL,
     siteName: "Girish Lade",
     title: "Girish Lade — Building AI-Powered Tools That Empower Developers",
     description:
       "Solo founder of Lade Stack — free, no-login, AI-powered developer tools. Mechanical engineer turned software builder.",
-    images: [{ url: "/images/hero-portrait.jpg", width: 1920, height: 1080, alt: "Girish Lade" }],
+    images: [{ url: `${SITE_URL}/images/hero-portrait.jpg`, width: 1920, height: 1080, alt: "Girish Lade" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Girish Lade — Building AI-Powered Tools That Empower Developers",
     description:
       "Solo founder of Lade Stack — free, no-login, AI-powered developer tools.",
-    images: ["/images/hero-portrait.jpg"],
+    images: [`${SITE_URL}/images/hero-portrait.jpg`],
   },
   robots: { index: true, follow: true },
 };

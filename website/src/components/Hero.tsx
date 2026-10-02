@@ -9,6 +9,7 @@ import {
   useTransform,
 } from "framer-motion";
 import { EASE } from "@/lib/motion";
+import { withBase } from "@/utils/basePath";
 
 /* Prompt 02 — Hero layout + staggered load cascade.
    Prompt 03 — whole composition parallaxes out at ~0.55x scroll speed.
@@ -58,7 +59,7 @@ export default function Hero() {
               photo (16:9 landscape, black studio background — see prompt 14 for
               the outpainting recipe). Container/crop must stay unchanged. */}
           <Image
-            src="/images/hero-portrait.jpg"
+            src={withBase("/images/hero-portrait.jpg")}
             alt="Portrait of Girish Lade"
             fill
             priority
@@ -132,7 +133,7 @@ export default function Hero() {
         className="absolute left-5 top-6 z-30 md:left-14 md:top-8"
       >
         <Image
-          src="/images/logo.png"
+          src={withBase("/images/logo.png")}
           alt="Girish Lade logo"
           priority
           unoptimized
