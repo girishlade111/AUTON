@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://girishlade111.github.io/AUTON/sitemap.xml
